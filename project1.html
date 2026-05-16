@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 1 — Biodata Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --sky: #e0f2fe;
+      --white: #ffffff;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2e8f0;
+      --radius: 14px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--gray-light);
+      color: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: var(--white);
+      padding: 36px 24px 30px;
+      text-align: center;
+    }
+
+    header .tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: 0 2px 12px rgba(15,23,42,0.07);
+      border: 1px solid var(--border);
+    }
+
+    .project-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+
+    .divider {
+      height: 2px;
+      background: var(--sky);
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .project-desc {
+      line-height: 1.8;
+      color: #334155;
+      font-size: 0.97rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 32px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .back-btn:hover { background: var(--blue); }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="tag">TIK &mdash; Project Website</div>
+    <h1>Jose Lionel Theo &mdash; XIA5</h1>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="project-label">Project 01</div>
+      <div class="project-title">Biodata Digital</div>
+      <hr class="divider" />
+      <div class="project-desc">
+        <p>Project ini adalah halaman biodata pribadi yang dibuat menggunakan HTML dan CSS. Halaman menampilkan informasi diri seperti nama, kelas, hobi, dan cita-cita dalam tampilan yang rapi dan terstruktur.</p>
+        <br>
+        <p>Tujuan dari project ini adalah untuk mempraktikkan pemahaman tentang struktur dasar HTML seperti heading, paragraf, dan list, serta menerapkan CSS untuk mengatur tata letak, warna, dan tipografi agar tampilan lebih menarik dan mudah dibaca.</p>
+      </div>
+      <a href="index.html" class="back-btn">&larr; Kembali ke Halaman Utama</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Jose Lionel Theo &mdash; XIA5
+  </footer>
+
+  <script>
+    console.log("Project 1: Biodata Digital loaded.");
+  </script>
+
+</body>
+</html>

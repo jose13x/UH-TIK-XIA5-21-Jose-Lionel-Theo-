@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Siswa — Jose Lionel Theo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --blue-light: #3b82f6;
+      --sky: #e0f2fe;
+      --white: #ffffff;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2e8f0;
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--gray-light);
+      color: var(--navy);
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: var(--white);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header .label {
+      font-family: 'Sora', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #bfdbfe;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.07);
+      border: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--blue);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--sky);
+    }
+
+    .biodata-wrap {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .foto-profil {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--blue-light);
+      background: var(--sky);
+      flex-shrink: 0;
+    }
+
+    .foto-placeholder {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: var(--sky);
+      border: 4px solid var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .bio-info {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .bio-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .bio-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .bio-item .key {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .bio-item .val {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .deskripsi p {
+      line-height: 1.75;
+      color: #334155;
+      font-size: 0.97rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    table thead tr {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    table th {
+      padding: 14px 18px;
+      text-align: left;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    table th:last-child,
+    table td:last-child {
+      text-align: center;
+    }
+
+    table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    table tbody tr:hover {
+      background: var(--sky);
+    }
+
+    table td {
+      padding: 13px 18px;
+      color: #334155;
+    }
+
+    .nilai-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 6px;
+      padding: 3px 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background: var(--white);
+    }
+
+    .project-card:hover {
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .project-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--blue);
+      text-transform: uppercase;
+    }
+
+    .project-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--gray);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    @media (max-width: 600px) {
+      .bio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 24px 18px;
+      }
+
+      header {
+        padding: 36px 20px 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="label">Teknologi Informasi dan Komunikasi</div>
+    <h1>Report Siswa</h1>
+    <p>Kelas XI &mdash; Semester Genap</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="section-title">Biodata Siswa</div>
+      <div class="biodata-wrap">
+        <img src="foto.jpg" alt="Foto Profil" class="foto-profil" />
+        <div class="bio-info">
+          <div class="bio-name">Jose Lionel Theo</div>
+          <div class="bio-grid">
+            <div class="bio-item">
+              <span class="key">Kelas</span>
+              <span class="val">XIA5</span>
+            </div>
+            <div class="bio-item">
+              <span class="key">No. Absen</span>
+              <span class="val">21</span>
+            </div>
+            <div class="bio-item">
+              <span class="key">Sekolah</span>
+              <span class="val">SMA Kolese Kanisius</span>
+            </div>
+            <div class="bio-item">
+              <span class="key">Hobi</span>
+              <span class="val">Bermain Bola</span>
+            </div>
+            <div class="bio-item">
+              <span class="key">Cita-cita</span>
+              <span class="val">Orang Kaya</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card deskripsi">
+      <div class="section-title">Tentang Saya</div>
+      <p>
+        Saya Jose Lionel Theo, siswa kelas XIA5 yang hobi bermain bola dan senang berolahraga bersama teman-teman saya. 
+        Selama semester ini, saya belajar TIK mulai dari dasar HTML untuk membangun struktur halaman web, CSS untuk mendesain 
+        tampilan yang menarik, hingga JavaScript untuk menambahkan interaksi pada website. Melalui pengalaman belajar ini, 
+        saya semakin termotivasi untuk mengeksplorasi dunia pengembangan web lebih dalam dan berharap dapat menerapkan 
+        kemampuan ini dalam project nyata di masa depan.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Nilai Ulangan Semester</div>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Materi</th>
+            <th>Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Biologi</td>
+            <td><span class="nilai-badge">95</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Fisika</td>
+            <td><span class="nilai-badge">82</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Matematika Lanjut</td>
+            <td><span class="nilai-badge">85</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Kimia</td>
+            <td><span class="nilai-badge">89</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Matematika Wajib</td>
+            <td><span class="nilai-badge">95</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Project Semester Ini</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-num">Project 01</span>
+          <div class="project-name">Biodata Digital</div>
+          <div class="project-desc">Halaman biodata pribadi yang dibuat dengan HTML dan CSS.</div>
+          <a href="project1.html" class="btn">Lihat Project</a>
+        </div>
+        <div class="project-card">
+          <span class="project-num">Project 02</span>
+          <div class="project-name">Kalkulator Sederhana</div>
+          <div class="project-desc">Kalkulator interaktif berbasis JavaScript untuk operasi dasar.</div>
+          <a href="project2.html" class="btn">Lihat Project</a>
+        </div>
+        <div class="project-card">
+          <span class="project-num">Project 03</span>
+          <div class="project-name">To-Do List</div>
+          <div class="project-desc">Aplikasi daftar tugas sederhana dengan fitur tambah dan hapus.</div>
+          <a href="project3.html" class="btn">Lihat Project</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Jose Lionel Theo &mdash; XIA5 &mdash; TIK Semester Genap
+  </footer>
+
+  <script>
+    console.log("Website Report Siswa - Jose Lionel Theo | Kelas XIA5 | Absen 21");
+  </script>
+
+</body>
+</html>
